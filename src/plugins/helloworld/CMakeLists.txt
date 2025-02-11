@@ -5,10 +5,6 @@ project(HelloWorldlugin)
 # 设置包含目录
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../3rdparty ${CMAKE_CURRENT_BINARY_DIR})
 
-# 设置编译选项，添加必要的 Qt 库
-find_package(Qt5 REQUIRED COMPONENTS Core Gui)
-set(CMAKE_AUTOMOC ON)
-
 # 定义源文件和头文件
 set(HEADERS
     helloservice.h
@@ -36,7 +32,7 @@ message("Version rc file path: ${TSP_VERSION_MAJ} ${CMAKE_CURRENT_BINARY_DIR}/ve
 add_library(${PROJECT_NAME} SHARED ${SOURCES} ${HEADERS} ${MOC_SOURCES})
 
 # 链接外部库
-target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui extensionsystem)
+target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui Qt5::Widgets extensionsystem)
 
 # 设置目标输出目录
 set_target_properties(${PROJECT_NAME}  PROPERTIES

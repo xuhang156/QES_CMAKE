@@ -1,6 +1,6 @@
 #ifndef CORE_PLUGIN_H
 #define CORE_PLUGIN_H
-
+#include <QMainWindow>
 #include <extensionsystem/iplugin.h>
 
 namespace Core {
@@ -19,6 +19,9 @@ public:
     bool initialize(const QStringList &arguments, QString *errorMessage);
     void extensionsInitialized();
     bool delayedInitialize();
+
+private:
+    QMainWindow* m_mainWindow;
 };
 
 } // namespace Internal

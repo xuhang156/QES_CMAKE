@@ -4,6 +4,8 @@
 #include "../plugins/helloworld/helloservice.h"
 
 #include <QCoreApplication>
+#include <QApplication>
+
 #include <QDebug>
 #include <QFileInfo>
 
@@ -87,14 +89,14 @@ static void printSpecs(QList<PluginSpec *> plugins)
 
 int main(int argc, char **argv)
 {
-    QCoreApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
 
     const QStringList pluginArguments = app.arguments();
 
     qDebug()<<"Path: "<<pluginArguments;
-    QString pluginPath = QCoreApplication::applicationDirPath() + "/plugins/";
+    QString pluginPath = QApplication::applicationDirPath() + "/plugins/";
 
     PluginManager pluginManager;
     PluginManager::setPluginIID(QLatin1String("waleon.blog.csdn.net.qesplugin"));

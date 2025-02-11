@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 
 project(app)
 
-find_package(Qt5 REQUIRED COMPONENTS Core Gui)
-
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/
     ${CMAKE_CURRENT_SOURCE_DIR}/../
@@ -22,6 +20,7 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} 
     Qt5::Core
     Qt5::Gui
+    Qt5::Widgets
     extensionsystem
 )
 

@@ -7,10 +7,6 @@ set(TARGET_NAME core)
 # 设置包含目录
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../3rdparty ${CMAKE_CURRENT_BINARY_DIR})
 
-# 设置编译选项，添加必要的 Qt 库
-find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets)
-set(CMAKE_AUTOMOC ON)
-
 # 定义源文件和头文件
 set(HEADERS
     coreplugin.h
