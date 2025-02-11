@@ -9,8 +9,8 @@ add_definitions(-DTSP_VERSION_MAJ=${TSP_VERSION_MAJ})
 add_definitions(-DTSP_VERSION_MIN=${TSP_VERSION_MIN})
 add_definitions(-DTSP_VERSION_PATCH=${TSP_VERSION_PATCH})
 add_definitions(-DTSP_VERSION_BUILD_NUM=${TSP_VERSION_BUILD_NUM})
-message("Set version maj min. ${TSP_VERSION_MAJ}")
-message("Version rc file path: ${TSP_VERSION_MAJ}")
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
 add_subdirectory(3rdparty)
 add_subdirectory(src)

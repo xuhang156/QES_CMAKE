@@ -40,7 +40,8 @@ target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Gui extensionsystem)
 
 # 设置目标输出目录
 set_target_properties(${PROJECT_NAME}  PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/plugins"
+    RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/plugins
+    RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/plugins
 )
 message("CMAKE_BINARY_DIR: ${CMAKE_BINARY_DIR}")
 # 添加需要分发的文件
